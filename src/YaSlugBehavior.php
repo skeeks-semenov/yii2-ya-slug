@@ -84,14 +84,12 @@ class YaSlugBehavior extends AttributeBehavior
     {
         if (!$this->value)
         {
-            $slugify = new Slugify((array) $this->slugifyOptions, $this->slugifyRuleProvider);
-
             if ($this->owner->{$this->slugAttribute})
             {
-                $slug = $slugify->slugify($this->owner->{$this->slugAttribute});
+                $slug = YaSlugHelper::slugify($this->owner->{$this->slugAttribute});
             } else
             {
-                $slug = $slugify->slugify($this->owner->{$this->attribute});
+                $slug = YaSlugHelper::slugify($this->owner->{$this->attribute});
             }
 
             if (strlen($slug) < $this->minLength) {
@@ -113,7 +111,7 @@ class YaSlugBehavior extends AttributeBehavior
                         if ($last = $this->owner->find()->orderBy('id DESC')->one())
                         {
                             $slug = $slug . '-' . $last->id;
-                            return $slugify->slugify($slug);
+                            return YaSlugHelper::slugify($slug);
                         }
                     }
                 } else
@@ -125,7 +123,7 @@ class YaSlugBehavior extends AttributeBehavior
                         if ($last = $this->owner->find()->orderBy('id DESC')->one())
                         {
                             $slug = $slug . '-' . $last->id;
-                            return $slugify->slugify($slug);
+                            return YaSlugHelper::slugify($slug);
                         }
                     }
                 }

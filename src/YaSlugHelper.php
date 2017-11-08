@@ -20,6 +20,12 @@ use yii\base\Event;
  */
 class YaSlugHelper
 {
+    /**
+     * @see http://translit-online.ru/yandex.html
+     *
+     * @param $string
+     * @return string
+     */
     static public function slugify($string)
     {
         $slugify = new Slugify([
@@ -50,6 +56,40 @@ class YaSlugHelper
 
         //1 step
         $string = $slugify->slugify($string);
+
+        $data = array_map(function ($i) use ($string) {
+            return mb_substr($string, $i, 1);
+        }, range(0, mb_strlen($string) -1));
+
+        $newData = [];
+
+        if ($data)
+        {
+            $lastWord = "";
+            foreach ($data as $word)
+            {
+                /**
+                 * @see http://translit-online.ru/yandex.html
+                 */
+                if ($lastWord && in_array($lastWord, ['c', 's', 'e', 'h']) && $word == "х") {
+                    $word = "kh";
+                } else if ($word == "х") {
+                    $word = "h";
+                }
+
+                $newData[] = $word;
+                if (mb_strlen($word) > 1) {
+                    $lastWord = mb_substr($word, mb_strlen($word) - 1, mb_strlen($word));
+                } else {
+                    $lastWord = $word;
+                }
+
+            }
+        }
+
+        if ($newData) {
+            return implode($newData);
+        }
 
         return $string;
     }
