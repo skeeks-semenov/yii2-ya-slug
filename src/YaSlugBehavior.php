@@ -108,7 +108,7 @@ class YaSlugBehavior extends AttributeBehavior
                         $this->slugAttribute => $slug
                     ])->andWhere(["!=", "id", $this->owner->id])->one())
                     {
-                        if ($last = $this->owner->find()->orderBy('id DESC')->one())
+                        if ($last = $this->owner->find()->orderBy('id DESC')->limit(1)->one())
                         {
                             $slug = $slug . '-' . $last->id;
                             return YaSlugHelper::slugify($slug);
@@ -120,7 +120,7 @@ class YaSlugBehavior extends AttributeBehavior
                         $this->slugAttribute => $slug
                     ])->one())
                     {
-                        if ($last = $this->owner->find()->orderBy('id DESC')->one())
+                        if ($last = $this->owner->find()->orderBy('id DESC')->limit(1)->one())
                         {
                             $slug = $slug . '-' . $last->id;
                             return YaSlugHelper::slugify($slug);
