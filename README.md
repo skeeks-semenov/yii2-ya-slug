@@ -57,7 +57,6 @@ public function behaviors()
 ### helper
 
 ```php
-<?php
 echo skeeks\yii2\yaslug\YaSlugBehavior::slugify("Тестовая строка");
 ```
 
