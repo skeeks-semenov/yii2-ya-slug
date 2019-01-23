@@ -62,9 +62,9 @@ echo skeeks\yii2\yaslug\YaSlugBehavior::slugify("Тестовая строка")
 
 Links
 ----------
-* [Github](https://github.com/skeeks-semenov/yii2-slug-behavior)
-* [Changelog](https://github.com/skeeks-semenov/yii2-slug-behavior/blob/master/CHANGELOG.md)
-* [Issues](https://github.com/skeeks-semenov/yii2-slug-behavior/issues)
+* [Github](https://github.com/skeeks-semenov/yii2-ya-slug)
+* [Changelog](https://github.com/skeeks-semenov/yii2-ya-slug/blob/master/CHANGELOG.md)
+* [Issues](https://github.com/skeeks-semenov/yii2-ya-slug/issues)
 * [Packagist](https://packagist.org/packages/skeeks/yii2-ya-slug)
 
 
