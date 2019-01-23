@@ -7,11 +7,8 @@ Direct generation is engaged in a proven solution [cocur/slugify](https://github
 
 Transliteration yandex http://translit-online.ru/yandex.html
 
-[![Latest Stable Version](https://poser.pugx.org/skeeks/yii2-ya-slug/v/stable.png)](https://packagist.org/packages/skeeks/yii2-ya-slug)
-[![Total Downloads](https://poser.pugx.org/skeeks/yii2-ya-slug/downloads.png)](https://packagist.org/packages/skeeks/yii2-ya-slug)
-[![GPL-3.0 License](https://img.shields.io/packagist/l/skeeks/yii2-ya-slug.svg)](https://opensource.org/licenses/GPL-3.0)
-[![Reference Status](https://www.versioneye.com/php/skeeks:yii2-ya-slug/reference_badge.svg)](https://www.versioneye.com/php/skeeks:yii2-ya-slug/references)
-[![Dependency Status](https://www.versioneye.com/php/skeeks:yii2-ya-slug/dev-master/badge.png)](https://www.versioneye.com/php/skeeks:yii2-ya-slug/dev-master)
+[![Latest Stable Version](https://img.shields.io/packagist/v/skeeks/yii2-ya-slug.svg)](https://packagist.org/packages/skeeks/yii2-ya-slug)
+[![Total Downloads](https://img.shields.io/packagist/dt/skeeks/yii2-ya-slug.svg)](https://packagist.org/packages/skeeks/yii2-ya-slug)
 
 Installation
 ------------
