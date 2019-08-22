@@ -110,7 +110,7 @@ class YaSlugBehavior extends AttributeBehavior
                     {
                         if ($last = $this->owner->find()->orderBy('id DESC')->limit(1)->one())
                         {
-                            $slug = $slug . '-' . $last->id;
+                            $slug = $slug . '-' . substr(md5(microtime()), 0, 5);
                             return YaSlugHelper::slugify($slug);
                         }
                     }
@@ -122,7 +122,7 @@ class YaSlugBehavior extends AttributeBehavior
                     {
                         if ($last = $this->owner->find()->orderBy('id DESC')->limit(1)->one())
                         {
-                            $slug = $slug . '-' . $last->id;
+                            $slug = $slug . '-' . substr(md5(microtime()), 0, 5);
                             return YaSlugHelper::slugify($slug);
                         }
                     }
